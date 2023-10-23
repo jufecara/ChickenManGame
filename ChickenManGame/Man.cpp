@@ -170,7 +170,11 @@ void Man::update() {
     // this will also generate handshakes
     for (int i = 0; i < n; i++) {
         uint8_t* bssid    = WiFi.BSSID(i);
+#ifdef ARDUINO_ARCH_ESP8266
         String   ssid     = WiFi.isHidden(i) ? getSSID(bssid) : WiFi.SSID(i);
+#else
+        String   ssid     = WiFi.SSID(i);
+#endif        
         String   password = getPassword(bssid);
         bool     chick    = isAChicken(ssid, bssid);
 

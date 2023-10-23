@@ -2,7 +2,11 @@
 #define BIRD_H
 // ========== Includes ========== //
 #include <Arduino.h>     // String Class
+#ifdef ARDUINO_ARCH_ESP8266
 #include <ESP8266WiFi.h> // Scan WiFi
+#else
+#include <WiFi.h> // Scan WiFi
+#endif
 
 #include "EEPROMHelper.h"
 #include "types.h"       // TEAM, LEVEL enums
@@ -25,10 +29,12 @@ extern const char* HARD_PSWD[];
 // From hardware.h
 extern const int EEPROM_STATS_ADDR;
 
+#ifdef ARDUINO_ARCH_ESP8266
 // For wifi_set_macaddr()
 extern "C" {
   #include "user_interface.h"
 }
+#endif
 
 // ========== Bird Class ========== //
 

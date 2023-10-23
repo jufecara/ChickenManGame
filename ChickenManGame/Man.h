@@ -4,8 +4,14 @@
 // ========== Includes ========== //
 
 #include <Arduino.h>           // String Class
+#ifdef ARDUINO_ARCH_ESP8266
 #include <ESP8266WiFi.h>       // Scan WiFi
 #include <ESP8266HTTPClient.h> // HTTPClient
+#else
+#include <WiFi.h>             // Scan WiFi
+#include <WebServer.h>
+#include <HTTPClient.h>
+#endif
 
 #include "EEPROMHelper.h"
 #include "types.h"             // TEAM, LEVEL enums

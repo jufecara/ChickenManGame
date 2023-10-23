@@ -1,7 +1,11 @@
 #include "Web.h"
 
 // ========== Global (but not really) Variables ========== //
+#ifdef ARDUINO_ARCH_ESP8266
 ESP8266WebServer webServer(80);
+#else
+WebServer webServer(80);
+#endif
 
 // ========== Global (but not really) Functions ========== //
 // index.html
@@ -70,6 +74,12 @@ void Web::begin() {
 }
 
 void Web::update() {
+#ifdef ARDUINO_ARCH_ESP8266
     MDNS.update();
+#else
+    // TODO: review this
+    MDNS.end();
+    MDNS.begin("Chicken");
+#endif
     webServer.handleClient();
 }

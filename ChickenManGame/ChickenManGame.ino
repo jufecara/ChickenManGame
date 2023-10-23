@@ -126,7 +126,11 @@ void setup() {
     Serial.println("Starting");
 
     // Random seed
+#ifdef ARDUINO_ARCH_ESP8266    
     randomSeed(os_random());
+#else
+    randomSeed(esp_random());
+#endif    
 
     // Start EEPROM
     EEPROMHelper::begin(EEPROM_SIZE);

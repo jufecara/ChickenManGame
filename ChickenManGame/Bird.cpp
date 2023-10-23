@@ -1,6 +1,8 @@
 // ========== Includes ========== //
 #include "Bird.h"
-
+#ifdef ARDUINO_ARCH_ESP32
+#include <esp_wifi.h>
+#endif
 // ========= Private ======== //
 
 // Calculates points per team
@@ -62,7 +64,11 @@ void Bird::createAP() {
     // Generate and set MAC address (BSSID) of access point
     uint8_t mac[6];
     getMacAddress(mac);
+#ifdef ARDUINO_ARCH_ESP32
+    esp_wifi_set_mac(WIFI_IF_AP, mac);
+#else
     wifi_set_macaddr(SOFTAP_IF, mac);
+#endif
 
     // Start access point
     WiFi.softAP(stats.ssid, stats.pswd, getChannel(), HIDDEN_SSID && stats.level == 2, MAX_CONNECTIONS);
@@ -126,8 +132,11 @@ void Bird::setID(unsigned int id) {
             int chickenID = bssid[5];
             availableIDs[chickenID] = false;
         }
-
+#ifdef ARDUINO_ARCH_ESP8266
         String ssid = WiFi.isHidden(i) ? "*Hidden*" : WiFi.SSID(i);
+#else
+        String ssid = WiFi.SSID(i);
+#endif        
 
         // Print network
         Serial.printf("%-32s - %s\n", ssid.c_str(), chick ? "Chicken" : "WORTHLESS!");
