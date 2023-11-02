@@ -253,7 +253,7 @@ int Bird::getPoints(TEAM team) const {
 
 // Returns string with the points of all teams i.e. "12,0,58"
 String Bird::getPointsString() const {
-    return String(stats.points[0]) + ',' + String(stats.points[1]) + ',' + String(stats.points[2]);
+    return "Chicken " + String(stats.id) + ": " + String(stats.points[0]) + ',' + String(stats.points[1]) + ',' + String(stats.points[2]);
 }
 
 String Bird::getPointsString(bool reset) {
