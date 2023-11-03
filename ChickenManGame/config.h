@@ -71,57 +71,57 @@ const char* SSID_SUFFIX[] PROGMEM = {
 
 // Passwords
 const char* EASY_PSWD[] PROGMEM = {
-    "password",
+    "password1",
     "123456789",
     "12345678",
     "1q2w3e4r",
-    "sunshine",
+    "987654321",
     "football",
-    "1234567890",
+    "blink182",
     "computer",
     "superman",
-    "internet",
+    "qwerty123",
     "iloveyou",
     "1qaz2wsx",
     "baseball",
-    "whatever",
-    "princess"
+    "zag12wsx",
+    "qwertyuiop"
 };
 
 const char* MEDIUM_PSWD[] PROGMEM = {
-    "sweetheart",
-    "overlord",
-    "michaela",
-    "meredith",
-    "buttercup",
-    "abc12345",
-    "aardvark",
+    "asdfghjkl",
+    "iloveyou12",
+    "asshole1",
+    "beautiful1",
+    "trustno1",
+    "421uiopy258",
+    "chocolate",
     "Passw0rd",
-    "12345678910",
-    "universal",
-    "trinidad",
-    "thursday",
-    "standard",
-    "pearljam",
-    "anonymous"
+    "cjmasterinf",
+    "manchester",
+    "pokemon1",
+    "password.",
+    "justinbieb",
+    "p@ssw0rd",
+    "1q2w3e4r5t6y"
 };
 
 const char* HARD_PSWD[] PROGMEM = {
-    "prairie chicken",
-    "chicken-breasted",
-    "chicken broth",
-    "chicken cholera",
-    "chickenpox",
-    "chicken pox",
-    "chicken roost",
-    "Chicken scratch",
-    "chicken septicemia",
-    "CHICKEN SHACK",
-    "chicken snake",
-    "chickensoup",
-    "chicken-spirited",
-    "chickens-toes",
-    "chicken thief"
+    "uQA9Ebw445",
+    "YAgjecc826",
+    "pa55word",
+    "FQRG7CS493",
+    "PE#5GZ29PTZMSE",
+    "1qaz2wsx3edc",
+    "PolniyPizdec0211",
+    "uQA9Ebw445",
+    "d41d8cd98f00b204e9800998ecf8427e",
+    "P3Rat54797",
+    "qti7Zxh18U",
+    "Tnk0Mk16VX",
+    "W5tXn36alfW",
+    "rammstein",
+    "MaprCheM56458"
 };
 
 // ========== Web Interface ========== //
